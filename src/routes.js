@@ -11,13 +11,17 @@ import CheckIns from './pages/CheckIns';
 import HelpOrderAnswer from './pages/HelpOrders/Answer';
 import HelpOrderList from './pages/HelpOrders/List';
 import NewHelpOrder from './pages/HelpOrders/New';
-import Sign from './pages/SignIn';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 
 export default (isSigned = false) =>
   createAppContainer(
     createSwitchNavigator(
       {
-        Sign,
+        Sign: createSwitchNavigator({
+          SignIn,
+          SignUp,
+        }),
         App: createBottomTabNavigator(
           {
             CheckIn: {
@@ -41,7 +45,7 @@ export default (isSigned = false) =>
                       <Icon name="edit-location" size={20} color={tintColor} />
                     ),
                   },
-                }
+                },
               ),
             },
             HelpOrder: {
@@ -63,7 +67,7 @@ export default (isSigned = false) =>
                       marginRight: 20,
                     },
                   },
-                }
+                },
               ),
               navigationOptions: {
                 tabBarLabel: 'Ask Help',
@@ -89,11 +93,11 @@ export default (isSigned = false) =>
                 height: 60,
               },
             },
-          }
+          },
         ),
       },
       {
         initialRouteName: isSigned ? 'App' : 'Sign',
-      }
-    )
+      },
+    ),
   );
