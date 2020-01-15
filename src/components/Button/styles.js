@@ -1,8 +1,10 @@
+import {Animated} from 'react-native';
 import {RectButton} from 'react-native-gesture-handler';
 
 import styled from 'styled-components/native';
 
-export const Container = styled(RectButton)`
+const rctBtn = Animated.createAnimatedComponent(RectButton);
+export const Container = styled(rctBtn)`
   height: 46px;
   background: #ee4d64;
   border-radius: 4px;
