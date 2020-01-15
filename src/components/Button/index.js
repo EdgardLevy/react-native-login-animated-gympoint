@@ -11,7 +11,6 @@ export default function Button({children, loading, ...rest}) {
   const [bWidth] = useState(new Animated.Value(354));
   useEffect(() => {
     if (loading) {
-      console.tron.log('bWidth loading', bWidth);
       Animated.parallel([
         Animated.timing(borderRadius, {
           toValue: 23,

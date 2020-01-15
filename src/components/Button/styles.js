@@ -8,7 +8,7 @@ export const Container = styled(rctBtn)`
   height: 46px;
   background: #ee4d64;
   border-radius: 4px;
-
+  margin-top: 5px;
   align-items: center;
   justify-content: center;
 `;

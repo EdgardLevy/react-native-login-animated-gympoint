@@ -1,9 +1,10 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.SafeAreaView`
-  flex: 1 auto;
+  flex: 1;
   background: #eee;
-  padding: 20px;
+  padding: 20px !important;
+  align-items: center;
 `;
 export const List = styled.FlatList.attrs({
   showsVerticalScrollIndicator: false,

@@ -1,6 +1,8 @@
+import {Animated} from 'react-native';
+
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Container = styled(Animated.View)`
   padding: 0 15px;
   height: 46px;
   /* background: #eee; */
