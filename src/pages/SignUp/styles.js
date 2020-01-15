@@ -1,4 +1,4 @@
-import {Platform} from 'react-native';
+import {Platform, Animated} from 'react-native';
 
 import styled from 'styled-components/native';
 
@@ -15,9 +15,10 @@ export const Container = styled.KeyboardAvoidingView.attrs({
   padding: 0 30px;
 `;
 
-export const Form = styled.View`
+export const Form = styled(Animated.View)`
   align-self: stretch;
   margin-top: 50px;
+  align-items: center;
 `;
 
 export const FormInput = styled(Input)`
@@ -35,4 +36,5 @@ export const SignLinkText = styled.Text`
   color: #ee4d64;
   font-weight: bold;
   font-size: 16px;
+  align-self: center;
 `;

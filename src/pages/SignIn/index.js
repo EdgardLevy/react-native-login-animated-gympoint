@@ -1,5 +1,5 @@
-import React, {useRef, useState, useEffect, useCallback} from 'react';
-import {Image, Animated, Dimensions} from 'react-native';
+import React, {useRef, useState, useEffect} from 'react';
+import {Animated, Dimensions} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 import logo from '~/assets/logo.png';
@@ -14,8 +14,6 @@ import {
   SignLink,
   SignLinkText,
 } from './styles';
-
-const animating = false;
 
 export default function SignIn({navigation}) {
   const [opacity] = useState(new Animated.Value(0));
@@ -70,6 +68,25 @@ export default function SignIn({navigation}) {
   function handleSubmit() {
     dispatch(signInRequest(email, password));
   }
+
+  function handleSignUp() {
+    navigation.navigate('SignUp');
+    // Animated.parallel([
+    //   Animated.spring(translateY, {
+    //     toValue: Dimensions.get('window').height,
+    //     duration: 200,
+    //     bounciness: 10,
+    //   }),
+    //   Animated.spring(logoY, {
+    //     toValue: (Dimensions.get('window').height / 2) * -1,
+    //     duration: 200,
+    //     bounciness: 10,
+    //   }),
+    // ]).start(() => {
+    //   navigation.navigate('SignUp');
+    // });
+  }
+
   return (
     <Background>
       <Container>
@@ -129,7 +146,7 @@ export default function SignIn({navigation}) {
             style={{
               opacity: fadeAnim,
             }}>
-            <SignLink onPress={() => navigation.navigate('SignUp')}>
+            <SignLink onPress={handleSignUp}>
               <SignLinkText>Criar conta gratuita</SignLinkText>
             </SignLink>
           </Animated.View>
